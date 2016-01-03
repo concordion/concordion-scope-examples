@@ -1,12 +1,11 @@
 package org.concordion.google.calculator;
 
-import org.concordion.google.web.GoogleFixture;
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.NoSuchElementException;
 
 @RunWith(ConcordionRunner.class)
-public class DigitalStorageFixture extends GoogleFixture {
+public class DigitalStorageFixture extends GoogleBaseFixture {
 
     public String getConversionResult() {
         try {
