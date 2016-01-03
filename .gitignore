@@ -1,0 +1,19 @@
+# Gradle
+.gradle
+build/
+
+# Maven
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IDEA
+.idea/
+*.iml
+
+# Infer
+infer-out/
