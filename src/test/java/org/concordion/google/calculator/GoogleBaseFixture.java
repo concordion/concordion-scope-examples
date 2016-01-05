@@ -2,6 +2,7 @@ package org.concordion.google.calculator;
 
 import org.concordion.api.AfterSpecification;
 import org.concordion.api.BeforeSpecification;
+import org.concordion.api.SpecificationScoped;
 import org.concordion.api.extension.Extension;
 import org.concordion.ext.ScreenshotExtension;
 import org.concordion.google.web.Browser;
@@ -18,7 +19,8 @@ import org.junit.runner.RunWith;
 @RunWith(ConcordionRunner.class)
 public abstract class GoogleBaseFixture {
 
-	protected static Browser browser;
+    @SpecificationScoped
+	protected Browser browser;
 	
     @Extension
     public ScreenshotExtension extension = new ScreenshotExtension();
