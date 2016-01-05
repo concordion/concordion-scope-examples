@@ -12,20 +12,20 @@ import org.concordion.integration.junit4.ConcordionRunner;
 import org.concordion.selenium.SeleniumScreenshotTaker;
 import org.junit.runner.RunWith;
 
-/** 
- * A base class for Google search tests that opens up the Google site
- * at the Google search page, and closes the browser once the test is complete.
+/**
+ * A base class for Google search tests that opens up the Google site at the
+ * Google search page, and closes the browser once the test is complete.
  */
 @RunWith(ConcordionRunner.class)
 public abstract class GoogleBaseFixture {
 
-	protected static Browser browser;
-	protected static GoogleSearchPage searchPage;
+    protected static Browser browser;
+    protected static GoogleSearchPage searchPage;
     private static SeleniumScreenshotTaker screenshotTaker;
-    
+
     @Extension
     public static ScreenshotExtension extension = new ScreenshotExtension();
-    
+
     protected GoogleResultsPage resultsPage;
 
     @BeforeSuite
@@ -36,20 +36,20 @@ public abstract class GoogleBaseFixture {
     }
 
     @BeforeSpecification
-    public void openSearchPage() { 
-        searchPage = new GoogleSearchPage(browser.getDriver()); 
+    public void openSearchPage() {
+        searchPage = new GoogleSearchPage(browser.getDriver());
     }
 
-	@AfterSuite
-	public void close() {
-		browser.close();
-		browser = null;
-	}
+    @AfterSuite
+    public void close() {
+        browser.close();
+        browser = null;
+    }
 
     /**
      * Searches for the specified topic, and waits for the results page to load.
      */
     public void searchFor(String topic) {
-    	resultsPage = searchPage.searchFor(topic);
+        resultsPage = searchPage.searchFor(topic);
     }
 }
