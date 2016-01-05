@@ -20,6 +20,7 @@ dependencies {
                 "org.concordion:concordion-screenshot-extension:$concordionScreenshotVersion",
                 "org.concordion:concordion-parallel-run-extension:$concordionParallelRunVersion",
                 "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    testRuntime "org.slf4j:slf4j-simple:1.7.13"
 }
 
 test {
