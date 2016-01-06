@@ -11,16 +11,13 @@ repositories {
 ext {
 	concordionVersion = "+"
 	concordionScreenshotVersion = "[1.1.2,)"
-    concordionParallelRunVersion = "[1.0.1,)"
 	seleniumVersion = "[2.43,)"
 }
 
 dependencies {
     testCompile "org.concordion:concordion:$concordionVersion",
                 "org.concordion:concordion-screenshot-extension:$concordionScreenshotVersion",
-                "org.concordion:concordion-parallel-run-extension:$concordionParallelRunVersion",
                 "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
-    testRuntime "org.slf4j:slf4j-simple:1.7.13"
 }
 
 test {

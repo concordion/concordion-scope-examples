@@ -1,8 +1,6 @@
 package org.concordion.google.calculator;
 
 import org.concordion.api.extension.Extension;
-import org.concordion.api.extension.Extensions;
-import org.concordion.ext.ParallelRunExtension;
 import org.concordion.ext.ScreenshotExtension;
 import org.concordion.google.web.Browser;
 import org.concordion.google.web.GoogleResultsPage;
@@ -17,7 +15,6 @@ import org.junit.runner.RunWith;
  * at the Google search page, and closes the browser once the test is complete.
  */
 @RunWith(ConcordionRunner.class)
-@Extensions(ParallelRunExtension.class)
 public abstract class GoogleBaseFixture {
 
 	protected Browser browser;
