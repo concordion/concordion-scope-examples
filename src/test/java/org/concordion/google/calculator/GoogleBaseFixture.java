@@ -2,8 +2,8 @@ package org.concordion.google.calculator;
 
 import org.concordion.api.AfterExample;
 import org.concordion.api.BeforeExample;
+import org.concordion.api.ExampleScoped;
 import org.concordion.api.Scoped;
-import org.concordion.api.SpecificationScoped;
 import org.concordion.api.extension.Extension;
 import org.concordion.ext.ScreenshotExtension;
 import org.concordion.google.web.Browser;
@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
 @RunWith(ConcordionRunner.class)
 public abstract class GoogleBaseFixture {
 
-    @SpecificationScoped
+    @ExampleScoped
     private Scoped<Browser> browserHolder = new Scoped<Browser>() {
         @Override
         public Browser create() {
