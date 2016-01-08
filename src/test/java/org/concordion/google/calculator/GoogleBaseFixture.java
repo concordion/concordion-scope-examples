@@ -5,6 +5,8 @@ import org.concordion.api.BeforeExample;
 import org.concordion.api.ExampleScoped;
 import org.concordion.api.Scoped;
 import org.concordion.api.extension.Extension;
+import org.concordion.api.extension.Extensions;
+import org.concordion.ext.ParallelRunExtension;
 import org.concordion.ext.ScreenshotExtension;
 import org.concordion.google.web.Browser;
 import org.concordion.google.web.GoogleResultsPage;
@@ -18,6 +20,7 @@ import org.junit.runner.RunWith;
  * Google search page, and closes the browser once the test is complete.
  */
 @RunWith(ConcordionRunner.class)
+@Extensions(ParallelRunExtension.class)
 public abstract class GoogleBaseFixture {
 
     @ExampleScoped
