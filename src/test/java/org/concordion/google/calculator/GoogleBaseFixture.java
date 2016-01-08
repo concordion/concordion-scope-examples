@@ -1,6 +1,8 @@
 package org.concordion.google.calculator;
 
-import org.concordion.api.BeforeSpecification;
+import org.concordion.api.AfterExample;
+import org.concordion.api.BeforeExample;
+import org.concordion.api.Scoped;
 import org.concordion.api.SpecificationScoped;
 import org.concordion.api.extension.Extension;
 import org.concordion.ext.ScreenshotExtension;
@@ -18,10 +20,13 @@ import org.junit.runner.RunWith;
 @RunWith(ConcordionRunner.class)
 public abstract class GoogleBaseFixture {
 
-    private SpecificationScoped<Browser> browserHolder = new SpecificationScoped<Browser>() {
+    @SpecificationScoped
+    private Scoped<Browser> browserHolder = new Scoped<Browser>() {
         @Override
         public Browser create() {
-            return new Browser();
+            Browser browser = new Browser();
+            extension.setScreenshotTaker(new SeleniumScreenshotTaker(browser.getDriver()));
+            return browser;
         }
         
         @Override
@@ -35,11 +40,16 @@ public abstract class GoogleBaseFixture {
 
     protected GoogleResultsPage resultsPage;
 
-    @BeforeSpecification
-    private void initialiseBrowser() {
-        extension.setScreenshotTaker(new SeleniumScreenshotTaker(browserHolder.get().getDriver()));
+    @BeforeExample
+    private void beforeExample(String exampleName) {
+        System.out.println(String.format("About to run '%s'", exampleName));
     }
-
+    
+    @AfterExample
+    private void afterExample(String exampleName) {
+        System.out.println(String.format("Finished example '%s'", exampleName));
+    }
+    
     /**
      * Searches for the specified topic, and waits for the results page to load.
      */
