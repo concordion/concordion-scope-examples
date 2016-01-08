@@ -1,6 +1,5 @@
 package org.concordion.google.calculator;
 
-import org.concordion.api.AfterSpecification;
 import org.concordion.api.BeforeSpecification;
 import org.concordion.api.SpecificationScoped;
 import org.concordion.api.extension.Extension;
@@ -19,8 +18,17 @@ import org.junit.runner.RunWith;
 @RunWith(ConcordionRunner.class)
 public abstract class GoogleBaseFixture {
 
-    @SpecificationScoped
-    protected Browser browser;
+    private SpecificationScoped<Browser> browserHolder = new SpecificationScoped<Browser>() {
+        @Override
+        public Browser create() {
+            return new Browser();
+        }
+        
+        @Override
+        protected void destroy(Browser browser) {
+            browser.close();
+        };
+    };
 
     @Extension
     public ScreenshotExtension extension = new ScreenshotExtension();
@@ -29,19 +37,13 @@ public abstract class GoogleBaseFixture {
 
     @BeforeSpecification
     private void initialiseBrowser() {
-        browser = new Browser();
-        extension.setScreenshotTaker(new SeleniumScreenshotTaker(browser.getDriver()));
-    }
-
-    @AfterSpecification
-    public void close() {
-        browser.close();
+        extension.setScreenshotTaker(new SeleniumScreenshotTaker(browserHolder.get().getDriver()));
     }
 
     /**
      * Searches for the specified topic, and waits for the results page to load.
      */
     public void searchFor(String topic) {
-        resultsPage = new GoogleSearchPage(browser.getDriver()).searchFor(topic);
+        resultsPage = new GoogleSearchPage(browserHolder.get().getDriver()).searchFor(topic);
     }
 }
