@@ -38,12 +38,12 @@ public abstract class GoogleBaseFixture {
     protected GoogleResultsPage resultsPage;
 
     @BeforeExample
-    private void beforeExample(String exampleName) {
+    private void beforeExample(@ExampleName String exampleName) {
         System.out.println(String.format("About to run '%s'", exampleName));
     }
     
     @AfterExample
-    private void afterExample(String exampleName) {
+    private void afterExample(@ExampleName String exampleName) {
         System.out.println(String.format("Finished example '%s'", exampleName));
     }
     
