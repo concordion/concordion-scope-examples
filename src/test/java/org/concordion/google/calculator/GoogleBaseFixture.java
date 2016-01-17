@@ -20,8 +20,8 @@ import org.junit.runner.RunWith;
 @Extensions(ParallelRunExtension.class)
 public abstract class GoogleBaseFixture {
 
-    @SpecificationScoped
-    private Scoped<Browser> browserHolder = new Scoped<Browser>() {
+    @ConcordionScoped(Scope.SPECIFICATION)
+    private ScopedObjectHolder<Browser> browserHolder = new ScopedObjectHolder<Browser>() {
         @Override
         public Browser create() {
             Browser browser = new Browser();
