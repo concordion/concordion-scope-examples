@@ -27,5 +27,6 @@ test {
     include '**/CalculatorFixture.*'
     testLogging.showStandardStreams = true
     systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"
+    systemProperties['concordion.run.threadCount'] = 4
     outputs.upToDateWhen { false } // force it to run even if test code hasn't changed
 }
