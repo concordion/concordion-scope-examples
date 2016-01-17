@@ -15,7 +15,7 @@ Entering sums into the Google search bar causes Google to calculate the sum.
 [6 * 9][search] should be [54][check].
 
 ## Division
-### [Example](- "division")
+### [Example](- "division c:status="ExpectedToFail")
 |[searchSum][][sum][]|[expected][check]|
 |-------------------:|----------------:|
 |9 / 6|1.5|
