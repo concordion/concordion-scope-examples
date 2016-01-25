@@ -25,7 +25,7 @@ public abstract class GoogleBaseFixture {
     private SeleniumScreenshotTaker screenshotTaker;
 
     @Extension
-    public ScreenshotExtension extension = new ScreenshotExtension();
+    private ScreenshotExtension extension = new ScreenshotExtension();
 
     protected GoogleResultsPage resultsPage;
 
