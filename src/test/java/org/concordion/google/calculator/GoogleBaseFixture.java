@@ -36,7 +36,7 @@ public abstract class GoogleBaseFixture {
     };
 
     @Extension
-    public ScreenshotExtension extension = new ScreenshotExtension();
+    private ScreenshotExtension extension = new ScreenshotExtension();
 
     protected GoogleResultsPage resultsPage;
 
