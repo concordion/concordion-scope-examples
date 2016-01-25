@@ -27,7 +27,7 @@ public abstract class GoogleBaseFixture {
     protected static ThreadLocal<Browser> browser = new ThreadLocal<Browser>();
 
     @Extension
-    public ScreenshotExtension extension = new ScreenshotExtension();
+    private ScreenshotExtension extension = new ScreenshotExtension();
 
     protected GoogleResultsPage resultsPage;
 
