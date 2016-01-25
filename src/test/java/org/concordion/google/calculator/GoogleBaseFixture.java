@@ -37,16 +37,6 @@ public abstract class GoogleBaseFixture {
 
     protected GoogleResultsPage resultsPage;
 
-    @BeforeExample
-    private void beforeExample(@ExampleName String exampleName) {
-        System.out.println(String.format("About to run '%s'", exampleName));
-    }
-    
-    @AfterExample
-    private void afterExample(@ExampleName String exampleName) {
-        System.out.println(String.format("Finished example '%s'", exampleName));
-    }
-    
     /**
      * Searches for the specified topic, and waits for the results page to load.
      */
