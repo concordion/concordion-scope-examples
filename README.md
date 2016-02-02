@@ -8,7 +8,9 @@ This encourages users to keep examples completely independent of each other, ens
 
 However, we recognise that sometimes you will want to share fields across a specification when the field is expensive to initialise, for example a browser instance or database connection.
 
-This project demonstrates the use of different scopes to share browsers across web tests. Each branch shows a different combination of field scope and runner (serial or parallel). It includes the use of the ScreenshotExtension to demonstrate the use of extensions in different scopes. 
+This project demonstrates the use of different scopes to share browsers across web tests. 
+
+The repository contains multiple branches, where each branch shows a different combination of field scope and runner (serial or parallel). The code includes the use of the ScreenshotExtension to demonstrate the use of extensions in different scopes. 
 
 To run the project, install Gradle, checkout the relevant branch, and run `gradle test`.
 
