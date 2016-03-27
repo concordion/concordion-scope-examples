@@ -25,7 +25,7 @@ public abstract class GoogleBaseFixture {
             extension.setScreenshotTaker(new SeleniumScreenshotTaker(browser.getDriver()));
             return browser;
         }
-        
+
         @Override
         protected void destroy(Browser browser) {
             browser.close();
