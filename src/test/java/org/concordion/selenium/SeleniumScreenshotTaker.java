@@ -18,7 +18,7 @@ public class SeleniumScreenshotTaker implements ScreenshotTaker {
     public SeleniumScreenshotTaker(WebDriver driver) {
         WebDriver baseDriver = driver;
         while (baseDriver instanceof EventFiringWebDriver) {
-            baseDriver = ((EventFiringWebDriver)baseDriver).getWrappedDriver();
+            baseDriver = ((EventFiringWebDriver) baseDriver).getWrappedDriver();
         }
         this.driver = baseDriver;
     }
@@ -27,12 +27,12 @@ public class SeleniumScreenshotTaker implements ScreenshotTaker {
     public int writeScreenshotTo(OutputStream outputStream) throws IOException {
         byte[] screenshot;
         try {
-            screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         } catch (ClassCastException e) {
             throw new ScreenshotUnavailableException("driver does not implement TakesScreenshot");
         }
         outputStream.write(screenshot);
-        return ((Long)((JavascriptExecutor)driver).executeScript("return document.body.clientWidth")).intValue() + 2; //window.outerWidth"));
+        return ((Long) ((JavascriptExecutor) driver).executeScript("return document.body.clientWidth")).intValue() + 2; // window.outerWidth"));
     }
 
     @Override
