@@ -11,41 +11,41 @@ import org.openqa.selenium.support.PageFactory;
  * A WebDriver Page Object corresponding to the Google Search Page.
  */
 public class GoogleSearchPage {
-	
+
     @CacheLookup
-	@FindBy(name = "q") 
-	private WebElement queryBox;
-	
+    @FindBy(name = "q")
+    private WebElement queryBox;
+
     @CacheLookup
-	@FindBy(name = "btnG") 
-	private WebElement submitButton;
-	
+    @FindBy(name = "btnG")
+    private WebElement submitButton;
+
     @FindBy(className = "nonExistent")
     private WebElement nonExistentLink;
 
     private final WebDriver driver;
-    
-	/**
-	 * Opens the Google Search Page.
-	 */
-	public GoogleSearchPage(WebDriver webDriver) {
-		this.driver = webDriver;
-        PageFactory.initElements(driver, this);
-		driver.get("http://www.google.com");
-	}
 
     /**
-     * Searches for the specified string and opens the results page, 
-     * waiting for the page to fully load. 
+     * Opens the Google Search Page.
      */
-	public GoogleResultsPage searchFor(String query) {
+    public GoogleSearchPage(WebDriver webDriver) {
+        this.driver = webDriver;
+        PageFactory.initElements(driver, this);
+        driver.get("http://www.google.com");
+    }
+
+    /**
+     * Searches for the specified string and opens the results page, waiting for
+     * the page to fully load.
+     */
+    public GoogleResultsPage searchFor(String query) {
         queryBox.clear();
         queryBox.sendKeys(query);
         queryBox.sendKeys(Keys.ESCAPE);
-		submitButton.click();
-		return new GoogleResultsPage(driver);
-	}
-    
+        submitButton.click();
+        return new GoogleResultsPage(driver);
+    }
+
     public void clickOnNonExistentLink() {
         nonExistentLink.click();
     }
