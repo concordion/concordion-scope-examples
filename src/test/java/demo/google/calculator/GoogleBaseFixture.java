@@ -1,4 +1,4 @@
-package org.concordion.google.calculator;
+package demo.google.calculator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,12 +8,13 @@ import org.concordion.api.extension.Extension;
 import org.concordion.api.extension.Extensions;
 import org.concordion.ext.ParallelRunExtension;
 import org.concordion.ext.ScreenshotExtension;
-import org.concordion.google.web.Browser;
-import org.concordion.google.web.GoogleResultsPage;
-import org.concordion.google.web.GoogleSearchPage;
 import org.concordion.integration.junit4.ConcordionRunner;
+import org.concordion.selenium.Browser;
 import org.concordion.selenium.SeleniumScreenshotTaker;
 import org.junit.runner.RunWith;
+
+import demo.driver.google.web.GoogleResultsPage;
+import demo.driver.google.web.GoogleSearchPage;
 
 /**
  * A base class for Google search tests that opens up the Google site at the
@@ -37,7 +38,7 @@ public abstract class GoogleBaseFixture {
             browser.set(newBrowser);
             browsers.add(newBrowser);
         }
-        extension.setScreenshotTaker(new SeleniumScreenshotTaker(browser.get().getDriver()));
+        extension.setScreenshotTaker(new SeleniumScreenshotTaker(browser.get()));
     }
 
     @AfterSuite
@@ -51,9 +52,7 @@ public abstract class GoogleBaseFixture {
      * Searches for the specified topic, and waits for the results page to load.
      */
     public void searchFor(String topic) {
-        if (browser.get() == null) {
-            initialiseBrowser();
-        }
-        resultsPage = new GoogleSearchPage(browser.get().getDriver()).searchFor(topic);
+        initialiseBrowser();
+        resultsPage = new GoogleSearchPage(browser.get()).searchFor(topic);
     }
 }
