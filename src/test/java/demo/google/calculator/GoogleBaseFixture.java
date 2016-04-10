@@ -1,5 +1,6 @@
 package demo.google.calculator;
 
+import org.concordion.api.AfterExample;
 import org.concordion.api.extension.Extension;
 import org.concordion.api.extension.Extensions;
 import org.concordion.ext.ParallelRunExtension;
@@ -7,7 +8,6 @@ import org.concordion.ext.ScreenshotExtension;
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.concordion.selenium.Browser;
 import org.concordion.selenium.SeleniumScreenshotTaker;
-import org.junit.After;
 import org.junit.runner.RunWith;
 
 import demo.driver.google.web.GoogleResultsPage;
@@ -36,7 +36,7 @@ public abstract class GoogleBaseFixture {
         extension.setScreenshotTaker(screenshotTaker);
     }
 
-    @After
+    @AfterExample
     public void close() {
         if (browser != null) {
             browser.close();
