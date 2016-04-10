@@ -1,18 +1,15 @@
-package org.concordion.google.calculator;
+package demo.google.calculator;
 
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.NoSuchElementException;
 
 @RunWith(ConcordionRunner.class)
-public class ArithmeticFixture extends GoogleBaseFixture {
+public class SpeedFixture extends GoogleBaseFixture {
 
-    /**
-     * Returns the result from Google calculation.
-     */
-    public String getCalculatorResult() {
+    public String getConversionResult() {
         try {
-            return resultsPage.getCalculatorResult();
+            return resultsPage.getConversionResult();
         } catch (NoSuchElementException e) {
             return resultsPage.getTopResultTitle();
         }

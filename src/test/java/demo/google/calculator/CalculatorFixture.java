@@ -1,4 +1,4 @@
-package org.concordion.google.calculator;
+package demo.google.calculator;
 
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;

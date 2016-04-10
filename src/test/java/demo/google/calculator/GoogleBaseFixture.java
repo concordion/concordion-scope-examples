@@ -1,16 +1,17 @@
-package org.concordion.google.calculator;
+package demo.google.calculator;
 
 import org.concordion.api.AfterSuite;
 import org.concordion.api.BeforeSpecification;
 import org.concordion.api.BeforeSuite;
 import org.concordion.api.extension.Extension;
 import org.concordion.ext.ScreenshotExtension;
-import org.concordion.google.web.Browser;
-import org.concordion.google.web.GoogleResultsPage;
-import org.concordion.google.web.GoogleSearchPage;
 import org.concordion.integration.junit4.ConcordionRunner;
+import org.concordion.selenium.Browser;
 import org.concordion.selenium.SeleniumScreenshotTaker;
 import org.junit.runner.RunWith;
+
+import demo.driver.google.web.GoogleResultsPage;
+import demo.driver.google.web.GoogleSearchPage;
 
 /**
  * A base class for Google search tests that opens up the Google site at the
@@ -31,13 +32,13 @@ public abstract class GoogleBaseFixture {
     @BeforeSuite
     public void open() {
         browser = new Browser();
-        screenshotTaker = new SeleniumScreenshotTaker(browser.getDriver());
+        screenshotTaker = new SeleniumScreenshotTaker(browser);
         extension.setScreenshotTaker(screenshotTaker);
     }
 
     @BeforeSpecification
     public void openSearchPage() {
-        searchPage = new GoogleSearchPage(browser.getDriver());
+        searchPage = new GoogleSearchPage(browser);
     }
 
     @AfterSuite
