@@ -2,7 +2,7 @@
 
 Demonstrates the usage of different field scopes in Concordion.
 
-With the introduction of [examples](http://concordion.github.io/concordion/latest/spec/command/example/Examples.html) running as separate JUnit tests in Concordion 2.0.0, Concordion reinitialises the fields in fixture objects for each Concordion example. 
+With the introduction of [examples](http://concordion.github.io/concordion/latest/spec/command/example/Example.html) running as separate JUnit tests in Concordion 2.0.0, Concordion reinitialises the fields in fixture objects for each Concordion example. 
 
 This encourages users to keep examples completely independent of each other, ensuring clean state per example and allowing individual examples to be run in isolation. It also makes the specification easier to follow when you can read examples in isolation.
 
@@ -38,3 +38,8 @@ As an alternative the fixtures from Specification Scope above can easily be modi
 
 * [per_example_serial_scoped](../../blob/per_example_serial_scoped/src/test/java/demo/google/calculator/GoogleBaseFixture.java) 
 * [per_example_parallel_scoped](../../blob/per_example_parallel_scoped/src/test/java/demo/google/calculator/GoogleBaseFixture.java)
+
+# Additional Method Hooks
+In some cases, you may wish to use additional method hooks.
+
+In [per_spec_serial_with_example_hooks](../../blob/per_spec_serial_with_example_hooks/src/test/java/demo/google/calculator/GoogleBaseFixture.java), a browser is created and destroyed per specification, with a (fake) login/logout triggered per example.
