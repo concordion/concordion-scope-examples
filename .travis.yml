@@ -2,11 +2,17 @@ language: java
 jdk:
 - oraclejdk8
 - oraclejdk7
+env:
+  global:
+  - secure: npzM2T8SgHr7hUVFl64aFihiqFWX4a6hjorCCSFFBsK7hXcnpVso7whgNdCy8SSNzy/twSkT9EV1Y7Pf7ID6zwTFXEYH7ryRo/vrMcnSlF2VeRoTdGrTE6hTb5cI2Zd9FlABFwMRy3z4Vv9XisFugo5qfMfU8YdfdQdQtHU9LIK875TJlgRVz+hy+u1wjH3Bhb+ORD1qv1XLNxb5HQCHEKzOAxl+wOsRKjVWR57hDZ6fiNzR4NmsMB5cm1Y4VdV04Y6E0AwaCkSZkUwiG4nxCx98bYtjLDYKYh0lMXk0oNZAvidL29TXOkpMAz9rB5rwwwGHnBX6k0pyye9vRmlnsS6kpuzMftFAFQh0ASFJWsCDzpe+F/VBwLz68PuA3UhHf/x/Hk7lIWt9qBIzK527ENH9xO/7XNlcSF61AmUHYKP9Othc3qgRSfhFRo967BwEjhs2p/mw1LTroC4gFuSoOBPxI80RiL+bXm5SNg6vwY9DkmcYWwZpjXSaKOjmKS0kyDwmOa1YGSE8zf5HTygsm8hKBJ7dI9diirB3jOKhA7zmbZewJSCF0v7PWIYlvJVsOX2TJMXG3pYsiqngs5BPbyRmkcV0lqdyfl23ozHLS4joZkLHhdbyBAoNYqSsXsORr6GoCUrj4qQtH84urjUgOs3wmzjkfwbFbDELZPOxeGE=
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - sleep 3
-# blacklist
 branches:
   except:
-    - master
+  - master
+after_success:
+- ".utility/push-output-to-ghpages.sh"
+after_failure:
+- ".utility/push-output-to-ghpages.sh"
