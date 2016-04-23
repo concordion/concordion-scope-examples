@@ -8,7 +8,7 @@ Any length unit can also be combined with a time unit to define a speed unit, su
 * [1.5kb in bits][search] = [12000][check].
 
 ## [Data Transfer Rate](- "transfer")
-* [20 kilobit per second in gigabyte per hour][search] = [0.072][check].
+* [20 kilobit per second in gigabits per hour][search] = [0.072][check].
 
 [search]: - "searchFor(#TEXT)"
 [check]:  - "?=getConversionResult()"
