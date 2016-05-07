@@ -22,7 +22,7 @@ public class GoogleResultsPage {
 	private WebElement resultWrapper;
 
     @CacheLookup
-	@FindBy(className = "l")
+	@FindBy(className = "g")
 	private WebElement firstResultLink;
 	
     @CacheLookup
