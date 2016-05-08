@@ -43,6 +43,7 @@ public class GoogleSearchPage {
         queryBox.sendKeys(query);
         pause();
         queryBox.sendKeys(Keys.ESCAPE);
+        pause();
 		submitButton.click();
 		return new GoogleResultsPage(browser);
 	}
