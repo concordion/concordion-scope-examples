@@ -41,10 +41,19 @@ public class GoogleSearchPage {
 	public GoogleResultsPage searchFor(String query) {
 	    queryBox.clear();
         queryBox.sendKeys(query);
+        micropause();
         queryBox.sendKeys(Keys.ESCAPE);
 		submitButton.click();
 		return new GoogleResultsPage(browser);
 	}
+
+    private void micropause() {
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void clickOnNonExistentLink() {
         nonExistentLink.click();
