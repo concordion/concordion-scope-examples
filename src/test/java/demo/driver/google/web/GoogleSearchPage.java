@@ -12,20 +12,18 @@ import org.openqa.selenium.support.PageFactory;
  * A WebDriver Page Object corresponding to the Google Search Page.
  */
 public class GoogleSearchPage {
-	
-    @CacheLookup
-	@FindBy(name = "q") 
+
+	@FindBy(name = "q")
 	private WebElement queryBox;
-	
-    @CacheLookup
-	@FindBy(name = "btnG") 
+
+	@FindBy(name = "btnG")
 	private WebElement submitButton;
-	
+
     @FindBy(className = "nonExistent")
     private WebElement nonExistentLink;
 
     private Browser browser;
-    
+
 	/**
 	 * Opens the Google Search Page.
 	 */
@@ -37,8 +35,8 @@ public class GoogleSearchPage {
 	}
 
     /**
-     * Searches for the specified string and opens the results page, 
-     * waiting for the page to fully load. 
+     * Searches for the specified string and opens the results page,
+     * waiting for the page to fully load.
      */
 	public GoogleResultsPage searchFor(String query) {
 	    queryBox.clear();
@@ -47,7 +45,7 @@ public class GoogleSearchPage {
 		submitButton.click();
 		return new GoogleResultsPage(browser);
 	}
-    
+
     public void clickOnNonExistentLink() {
         nonExistentLink.click();
     }
