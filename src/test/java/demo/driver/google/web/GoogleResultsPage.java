@@ -16,24 +16,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * A WebDriver Page Object corresponding to the Google Results Page.
  */
 public class GoogleResultsPage {
-	
-    @CacheLookup
-	@FindBy(id = "res") 
+
+	@FindBy(id = "res")
 	private WebElement resultWrapper;
 
-    @CacheLookup
 	@FindBy(className = "g")
 	private WebElement firstResultLink;
-	
-    @CacheLookup
+
     @FindBy(id = "cwos")
     private WebElement calcResultLink;
-    
-    @CacheLookup
+
     @FindBy(css = ".vk_ans")
     private WebElement constantResultLink;
 
-    @CacheLookup
     @FindBy(css = "#_Cif > input")
     private WebElement conversionResultLink;
 
@@ -68,7 +63,7 @@ public class GoogleResultsPage {
     public String getTopResultTitle() {
 		return firstResultLink.getText();
 	}
-	
+
     /**
      * Returns the text of the topmost result from the results page.
      */
@@ -76,7 +71,7 @@ public class GoogleResultsPage {
         String result = calcResultLink.getText();
         return result;
     }
-    
+
     public String getConstantResult() {
         String result = constantResultLink.getText();
         return result;
@@ -86,7 +81,7 @@ public class GoogleResultsPage {
         String result = conversionResultLink.getAttribute("value");
         return result;
     }
-    
+
     private void waitForFooter() {
 		WebDriverWait wait = new  WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("foot")));
