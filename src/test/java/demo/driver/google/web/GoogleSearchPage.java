@@ -4,7 +4,6 @@ import org.concordion.selenium.Browser;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -40,16 +39,17 @@ public class GoogleSearchPage {
      */
 	public GoogleResultsPage searchFor(String query) {
 	    queryBox.clear();
+        pause();
         queryBox.sendKeys(query);
-        micropause();
+        pause();
         queryBox.sendKeys(Keys.ESCAPE);
 		submitButton.click();
 		return new GoogleResultsPage(browser);
 	}
 
-    private void micropause() {
+    private void pause() {
         try {
-            Thread.sleep(10);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
