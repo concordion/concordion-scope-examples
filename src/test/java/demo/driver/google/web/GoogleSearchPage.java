@@ -38,23 +38,13 @@ public class GoogleSearchPage {
      * waiting for the page to fully load.
      */
 	public GoogleResultsPage searchFor(String query) {
+        browser.getDriver().get("http://www.google.com");
 	    queryBox.clear();
-        pause();
         queryBox.sendKeys(query);
-        pause();
         queryBox.sendKeys(Keys.ESCAPE);
-        pause();
 		submitButton.click();
 		return new GoogleResultsPage(browser);
 	}
-
-    private void pause() {
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void clickOnNonExistentLink() {
         nonExistentLink.click();
