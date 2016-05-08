@@ -9,9 +9,9 @@ repositories {
 }
 
 dependencies {
-    testCompile "org.concordion:concordion:2.0.1",
+    testCompile "org.concordion:concordion:2.0.2",
                 "org.concordion:concordion-screenshot-extension:1.2.0",
-                "org.concordion:concordion-parallel-run-extension:1.0.1",
+                "org.concordion:concordion-parallel-run-extension:1.1.0",
                 "org.seleniumhq.selenium:selenium-java:[2.43,)",
                 'org.slf4j:slf4j-api:1.7.21'
     testRuntime 'ch.qos.logback:logback-classic:1.1.7'
