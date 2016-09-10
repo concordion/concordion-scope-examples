@@ -16,11 +16,11 @@ The project uses Selenium Webdriver to run some browser tests. In order to run i
 
 To run the project, checkout the relevant branch, and run `gradlew test`.
 
-## Global Scope
-The browser(s) are reused across all specifications.
+## Suite Scope
+The browser(s) are reused across all specifications, where the specifications are structured as a [suite](http://concordion.org/documenting/java/markdown/#creating-a-suite) using the run command to invoke child specifications.
 
-* [global_serial](../../blob/global_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) - a single browser instance is used across all tests.
-* [global_parallel](../../blob/global_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java) - initiates a single browser instance per thread across all tests. Note that the parallel runner does not guarantee that the same threads will be used across tests - additional threads may be started and old threads not reused.
+* [per_suite_serial](../../blob/per_suite_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) - a single browser instance is used across all tests.
+* [per_suite_parallel](../../blob/per_suite_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java) - initiates a single browser instance per thread across all tests. Note that the parallel runner does not guarantee that the same threads will be used across tests - additional threads may be started and old threads not reused.
  
 ## Specification Scope
 A browser is created and destroyed per specification, using Concordion [field scoping](http://concordion.github.io/concordion/latest/spec/command/example/ScopedField.html).
