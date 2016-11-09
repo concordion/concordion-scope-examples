@@ -14,34 +14,39 @@ The repository contains multiple branches, where each branch shows a different c
 
 The project uses Selenium Webdriver to run some browser tests. In order to run it, you'll need to have Firefox installed (or modify the code to use a different driver). Selenium WebDriver now requires you to download and unzip the [Gecko driver](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/WebDriver) and add it to your path (or set the `webdriver.gecko.driver` system property to the absolute path to the gecko driver executable).
 
-To run the project, checkout the relevant branch, and run `gradlew test`.
+To run the project using Firefox:
+
+1. Install Firefox (or modify the code to use a different driver)
+1. Download and unzip the [Gecko driver](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/WebDriver) and add it to your path (or set the `webdriver.gecko.driver` system property to the absolute path to the gecko driver executable).
+1. checkout (or download and unzip) the relevant branch from below
+1. run `gradlew test`
 
 ## Suite Scope
 The browser(s) are reused across all specifications, where the specifications are structured as a [suite](http://concordion.org/documenting/java/markdown/#creating-a-suite) using the run command to invoke child specifications.
 
-* [per_suite_serial](../../blob/per_suite_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) - a single browser instance is used across all tests.
-* [per_suite_parallel](../../blob/per_suite_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java) - initiates a single browser instance per thread across all tests. Note that the parallel runner does not guarantee that the same threads will be used across tests - additional threads may be started and old threads not reused.
+* [per_suite_serial](../../blob/per_suite_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_suite_serial.zip))_ - a single browser instance is used across all tests.
+* [per_suite_parallel](../../blob/per_suite_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_suite_parallel.zip))_ - initiates a single browser instance per thread across all tests. Note that the parallel runner does not guarantee that the same threads will be used across tests - additional threads may be started and old threads not reused.
  
 ## Specification Scope
 A browser is created and destroyed per specification, using Concordion [field scoping](http://concordion.github.io/concordion/latest/spec/command/example/ScopedField.html).
 
-* [per_spec_serial](../../blob/per_spec_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) 
-* [per_spec_parallel](../../blob/per_spec_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java)
+* [per_spec_serial](../../blob/per_spec_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_spec_serial.zip))_
+* [per_spec_parallel](../../blob/per_spec_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_spec_parallel.zip))_
 
 ## Example Scope
 A browser is created and destroyed per example. This is the default scope and ensures clean state for each browser instance.
 
 Note that the parallel tests are using the ParallelRunExtension to run the specifications in parallel. Concordion does not currently support running the individual examples in parallel.
 
-* [per_example_serial](../../blob/per_example_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) 
-* [per_example_parallel](../../blob/per_example_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java)
+* [per_example_serial](../../blob/per_example_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_example_serial.zip))_
+* [per_example_parallel](../../blob/per_example_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_example_parallel.zip))_
 
 As an alternative the fixtures from Specification Scope above can easily be modified to example scope by changing the value of the `@ConcordionScoped` annotation: 
 
-* [per_example_serial_scoped](../../blob/per_example_serial_scoped/src/test/java/demo/google/calculator/GoogleBaseFixture.java) 
-* [per_example_parallel_scoped](../../blob/per_example_parallel_scoped/src/test/java/demo/google/calculator/GoogleBaseFixture.java)
+* [per_example_serial_scoped](../../blob/per_example_serial_scoped/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_example_serial_scoped.zip))_
+* [per_example_parallel_scoped](../../blob/per_example_parallel_scoped/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_example_parallel_scoped.zip))_
 
 # Additional Method Hooks
 In some cases, you may wish to use additional method hooks.
 
-In [per_spec_serial_with_example_hooks](../../blob/per_spec_serial_with_example_hooks/src/test/java/demo/google/calculator/GoogleBaseFixture.java), a browser is created and destroyed per specification, with a (fake) login/logout triggered per example.
+In [per_spec_serial_with_example_hooks](../../blob/per_spec_serial_with_example_hooks/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_spec_serial_with_example_hooks.zip))_, a browser is created and destroyed per specification, with a (fake) login/logout triggered per example.
