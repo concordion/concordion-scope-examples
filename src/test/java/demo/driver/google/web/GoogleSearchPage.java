@@ -41,11 +41,10 @@ public class GoogleSearchPage {
      * waiting for the page to fully load. 
      */
 	public GoogleResultsPage searchFor(String query) {
-	    queryBox.clear();
-        queryBox.sendKeys(query);
-        queryBox.sendKeys(Keys.ESCAPE);
-		submitButton.click();
-		return new GoogleResultsPage(browser);
+		queryBox.clear();
+		queryBox.sendKeys(query);
+		queryBox.submit();
+		return new GoogleResultsPage(browser, query);
 	}
     
     public void clickOnNonExistentLink() {
