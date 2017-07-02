@@ -43,9 +43,8 @@ public class GoogleSearchPage {
 	public GoogleResultsPage searchFor(String query) {
 	    queryBox.clear();
         queryBox.sendKeys(query);
-        queryBox.sendKeys(Keys.ESCAPE);
-		submitButton.click();
-		return new GoogleResultsPage(browser);
+        queryBox.submit();
+		return new GoogleResultsPage(browser, query);
 	}
     
     public void clickOnNonExistentLink() {
