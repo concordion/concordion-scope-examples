@@ -12,12 +12,14 @@ This project demonstrates the use of different scopes to share browsers across w
 
 The repository contains multiple branches, where each branch shows a different combination of field scope and runner (serial or parallel). The code includes the use of the ScreenshotExtension to demonstrate the use of extensions in different scopes. 
 
-The project uses Selenium Webdriver to run some browser tests. In order to run it, you'll need to have Firefox installed (or modify the code to use a different driver). Selenium WebDriver now requires you to download and unzip the [Gecko driver](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/WebDriver) and add it to your path (or set the `webdriver.gecko.driver` system property to the absolute path to the gecko driver executable).
+The project uses Selenium Webdriver to run some browser tests. The tests use Selenium's ChromeDriver, so you'll need to have:
 
-To run the project using Firefox:
+1. Chrome installed (or you could change the code to use a different driver).
+1. chromedriver installed and added to the `PATH` (or the `webdriver.chrome.driver` system property set)
 
-1. Install Firefox (or modify the code to use a different driver)
-1. Download and unzip the [Gecko driver](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/WebDriver) and add it to your path (or set the `webdriver.gecko.driver` system property to the absolute path to the gecko driver executable).
+
+To run the project:
+
 1. checkout (or download and unzip) the relevant branch from below
 1. run `gradlew test`
 
