@@ -1,7 +1,7 @@
 apply plugin: 'java'
 
 wrapper {
-    gradleVersion = "2.12"
+    gradleVersion = "4.0"
 }
 
 repositories {
