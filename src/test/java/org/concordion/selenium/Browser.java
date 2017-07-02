@@ -20,7 +20,7 @@ public class Browser {
 
     public void close() {
         if (driver != null) {
-            driver.quit();
+            driver.close();
             driver = null;
         }
     }
