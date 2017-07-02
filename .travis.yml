@@ -8,10 +8,10 @@ before_script:
 - sh -e /etc/init.d/xvfb start --noreset
 - sleep 3
 before_install:
-  - LATEST=2.30
-  - wget https://chromedriver.storage.googleapis.com//chromedriver_linux64.zip
+  - LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+  - wget https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d chromedriver
-  - export PATH=/Users/nigel.charman/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/var/jenv/shims:/Users/nigel.charman/.dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/nigel.charman/bin:/Users/nigel.charman/.dotfiles/vendor/rbenv/bin:/Users/nigel.charman/source/concordion/concordion-scope-examples/chromedriver
+  - export PATH=$PATH:$PWD/chromedriver
 addons:
   apt:
     sources:
