@@ -18,9 +18,9 @@ public class Browser {
          driver = efwd;
     }
 
-    public void quit()()()() {
+    public void close() {
         if (driver != null) {
-            driver.quit()()()();
+            driver.quit();
             driver = null;
         }
     }
