@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    testCompile "org.concordion:concordion:2.1.0",
+    testCompile "org.concordion:concordion:2.1.1",
                 "org.concordion:concordion-screenshot-extension:1.2.0",
                 "org.concordion:concordion-parallel-run-extension:1.1.0",
                 "org.seleniumhq.selenium:selenium-java:[2.43,)",
