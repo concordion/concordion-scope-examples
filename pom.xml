@@ -89,7 +89,7 @@
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <selenium.version>[2.43.0,)</selenium.version>
-      <concordion.version>2.1.1</concordion.version>
+      <concordion.version>2.1.2</concordion.version>
       <screenshot-extension.version>1.2.0</screenshot-extension.version>
       <parallel-run-extension.version>1.1.0</parallel-run-extension.version>
       <slf4j.version>1.7.21</slf4j.version>
