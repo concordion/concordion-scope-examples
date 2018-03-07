@@ -65,6 +65,14 @@ public class SeleniumEventLogger implements WebDriverEventListener {
     }
 
     @Override
+    public void beforeSwitchToWindow(String s, WebDriver webDriver) {
+    }
+
+    @Override
+    public void afterSwitchToWindow(String s, WebDriver webDriver) {
+    }
+
+    @Override
     public void beforeClickOn(WebElement arg0, WebDriver arg1) {
         logger.debug("[{}] - clicked", getElementName(arg0));
     }
