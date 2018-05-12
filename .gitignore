@@ -14,6 +14,7 @@ bin/
 # IDEA
 .idea/
 *.iml
+out/
 
 # Infer
 infer-out/
