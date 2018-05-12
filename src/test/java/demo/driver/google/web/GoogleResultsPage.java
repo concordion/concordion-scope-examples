@@ -29,7 +29,7 @@ public class GoogleResultsPage {
     @FindBy(css = ".vk_ans")
     private WebElement constantResultLink;
 
-    @FindBy(css = "#_Cif > input")
+    @FindBy(css = "#NotFQb > input")
     private WebElement conversionResultLink;
 
     private final WebDriver driver;
