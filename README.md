@@ -24,7 +24,7 @@ To run the project:
 1. run `gradlew test`
 
 ## Suite Scope
-The browser(s) are reused across all specifications, where the specifications are structured as a [suite](http://concordion.org/documenting/java/markdown/#creating-a-suite) using the run command to invoke child specifications.
+The browser(s) are reused across all specifications, where the specifications are structured as a [suite](https://concordion.org/documenting/java/markdown/#creating-a-suite) using the run command to invoke child specifications.
 
 * [per_suite_serial](../../blob/per_suite_serial/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_suite_serial.zip))_ - a single browser instance is used across all tests.
 * [per_suite_parallel](../../blob/per_suite_parallel/src/test/java/demo/google/calculator/GoogleBaseFixture.java) _([download](https://github.com/concordion/concordion-scope-examples/archive/per_suite_parallel.zip))_ - initiates a single browser instance per thread across all tests. Note that the parallel runner does not guarantee that the same threads will be used across tests - additional threads may be started and old threads not reused.
