@@ -1,3 +1,5 @@
+services:
+  - xvfb
 language: java
 jdk:
 - openjdk8
@@ -7,9 +9,6 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install chromium-chromedriver    
 before_script:
-  - export PATH=/usr/local/Caskroom/terraform-0.11.2/0.11.2:/Users/nigel.charman/.rbenv/shims:/Users/nigel.charman/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/var/jenv/shims:/Users/nigel.charman/.dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/nigel.charman/source/assurity/dpp/terraform:/Users/nigel.charman/bin:/Users/nigel.charman/.dotfiles/vendor/rbenv/bin:/usr/lib/chromium-browser/
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
   - sleep 3
 branches:
   except:
