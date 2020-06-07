@@ -10,6 +10,7 @@ before_install:
   - sudo apt-get install chromium-chromedriver    
 before_script:
   - sleep 3
+script: xvfb-run gradlew test
 branches:
   except:
     - master
