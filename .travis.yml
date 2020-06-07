@@ -1,4 +1,4 @@
-language: java
+dist: trustynlanguage: java
 jdk:
 - openjdk8
 addons:
