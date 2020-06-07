@@ -1,5 +1,4 @@
-dist: trusty
-language: java
+dist: trustynlanguage: java
 jdk:
 - oraclejdk8
 addons:
