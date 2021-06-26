@@ -14,7 +14,7 @@ dependencies {
                 "org.concordion:concordion-parallel-run-extension:1.1.0",
                 "org.seleniumhq.selenium:selenium-java:3+",
                 'org.slf4j:slf4j-api:1.7.21'
-    testRuntime 'ch.qos.logback:logback-classic:1.1.7'
+    testRuntime 'ch.qos.logback:logback-classic:1.2.3'
 }
 
 test {
